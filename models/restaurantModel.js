@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const restaurantSchema = new Schema({
+    restaurant_id: {type: String},
     restaurantName: {type: String},
     apartmentNumber: {type: Number},
     streetname: {type: Number},
