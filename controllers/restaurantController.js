@@ -2,6 +2,7 @@ const express = require("express");
 const Restaurant = require("../models/restaurantModel");
 const MenuItem = require("../models/menuItemModel");
 const restaurants = express.Router();
+const newRestaurants = require("../dataFiles/restaurantData.js");
 
 // ROUTES
 // read
@@ -45,6 +46,18 @@ restaurants.delete("/:id", (req, res) => {
         } else {
             res.status(200).json(deletedRestaurant);
         }
+    });
+});
+
+// seed
+restaurants.get("/seed/seed", (req, res) => {
+    console.log(newRestaurants);
+    Restaurant.create(newRestaurants, (err, restaurants) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log("SEED: NEW RESTAURANTS CREATED!");
+        res.redirect("/restaurants");
     });
 });
 

@@ -1,6 +1,7 @@
 const express = require("express");
 const Order = require("../models/orderModel");
 const orders = express.Router();
+const newOrders = require("../dataFiles/orderData.js");
 
 // ROUTES
 // read - all orders
@@ -11,7 +12,7 @@ orders.get("/", (req, res) => {
             if (error) {
                 res.status(400).json({ error: error.message });
             } else {
-                res.status(200).json(foundOrders[foundOrders.length - 1]);
+                res.status(200).json(foundOrders);
             }
         });
 });
@@ -62,6 +63,29 @@ orders.delete("/:id", (req, res) => {
         } else {
             res.status(200).json(deletedOrder);
         }
+    });
+});
+
+// show
+orders.get("/:id", (req, res) => {
+    Order.find({ order_id: req.params.id }, (error, foundItems) => {
+        if (error) {
+            res.status(400).json({ error: error.message });
+        } else {
+            res.status(200).json(foundItems);
+        }
+    });
+});
+
+// seed
+orders.get("/seed/seed", (req, res) => {
+    console.log(newOrders);
+    Order.create(newOrders, (err, orders) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log("SEED: NEW ORDERS CREATED!");
+        res.redirect("/orders");
     });
 });
 

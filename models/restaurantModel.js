@@ -6,7 +6,7 @@ const restaurantSchema = new Schema({
     restaurant_id: {type: String},
     restaurantName: {type: String},
     apartmentNumber: {type: Number},
-    streetname: {type: Number},
+    streetname: {type: String},
     zipcode: {type: Number},
     phoneNumber: {type: Number},
     imgUrl: {type: String},
