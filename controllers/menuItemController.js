@@ -16,7 +16,7 @@ menuitems.get("/", (req, res) => {
 });
 
 // seed-newschema-menuitems
-menuitems.get("/seed2/seed2/", (req, res) => {
+menuitems.get("/seed/seed/", (req, res) => {
     // console.log(newMenuItems);
     MenuItem.create(newMenuItems, (err, menuItems) => {
         if (err) {
