@@ -3,7 +3,7 @@ const Order = require("../models/orderModel");
 const orders = express.Router();
 
 // ROUTES
-// read - last order
+// read - all orders
 orders.get("/", (req, res) => {
     Order.find({}) //add user from session
         .sort({ createdOn: 1 })
@@ -11,14 +11,27 @@ orders.get("/", (req, res) => {
             if (error) {
                 res.status(400).json({ error: error.message });
             } else {
-                res.status(200).json(foundOrders[0]);
+                res.status(200).json(foundOrders[foundOrders.length - 1]);
+            }
+        });
+});
+
+// read - last order for a user
+orders.get("/:user_id/lastorder", (req, res) => {
+    Order.find({ user_id: req.params.user_id }) //add user from session
+        .sort({ createdOn: 1 })
+        .exec((error, foundOrders) => {
+            if (error) {
+                res.status(400).json({ error: error.message });
+            } else {
+                res.status(200).json(foundOrders[foundOrders.length - 1]);
             }
         });
 });
 
 // read - history
-orders.get("/history", (req, res) => {
-    Order.find({})
+orders.get("/:user_id/history", (req, res) => {
+    Order.find({ user_id: req.params.user_id })
         .sort({ createdAt: 1 })
         .exec((error, foundOrders) => {
             if (error) {
@@ -30,7 +43,7 @@ orders.get("/history", (req, res) => {
 });
 
 // create
-orders.post("/new/:user_id", (req, res) => {
+orders.post("/:user_id/new", (req, res) => {
     req.body.user_id = req.params.user_id; //temporary to check different user's orders
     Order.create(req.body, (error, createdOrder) => {
         if (error) {
