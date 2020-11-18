@@ -40,7 +40,7 @@ restaurants = [
             item_id: 'be',
             }
         ]
-    }
+    },
 
 
     {

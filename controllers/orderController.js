@@ -52,4 +52,25 @@ orders.delete("/:id", (req, res) => {
     });
 });
 
+const newOrders= require('../dataFiles/orderData.js')
+orders.get('/seed', (req, res) => {
+    console.log(newOrders)
+    Order.create(newOrders, (err, orders) =>{
+        if (err) {console.log(err) }    
+        console.log('SEED: NEW ORDERS CREATED!')
+        res.redirect('/orders')
+    })
+})
+
+// show
+orders.get("/:id", (req, res) => {
+    Order.find({ order_id: req.params.id }, (error, foundItems) => {
+        if (error) {
+            res.status(400).json({ error: error.message });
+        } else {
+            res.status(200).json(foundItems);
+        }
+    });
+});
+
 module.exports = orders;
