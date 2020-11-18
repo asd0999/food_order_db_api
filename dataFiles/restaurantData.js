@@ -40,26 +40,47 @@ restaurants = [
             item_id: 'be',
             }
         ]
-    }
+    },
 
 
     {
-        restaurant_id: '789',
-        restaurantName: 'Taco Bell',
-        apartmentNumber: 523,
-        streetname: 'Glover Dr',
-        zipcode: 43321,
-        phoneNumber: 5849312344,
-        imgUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Taco_Bell_2016.svg/150px-Taco_Bell_2016.svg.png',
+        restaurant_id: '111',
+        restaurantName: 'Subway',
+        apartmentNumber: 600,
+        streetname: '5th St',
+        zipcode: 12343,
+        phoneNumber: 5749229084,
+        imgUrl: 'https://www.subway.com/-/media/Base_English/Images/Branding/subway-logo-new-1200x630.png',
         rating: 3.1,
-        tags: ['tacos', 'burritos', 'quesadillas'],
+        tags: ['sandwich', 'salad', 'vegan'],
         menu: [
             { 
-            item_id: 'ca',
-            item_id: 'cb',
-            item_id: 'cc',
-            item_id: 'cd',
-            item_id: 'ce',
+                item_id: 'da',
+                item_id: 'db',
+                item_id: 'dc',
+                item_id: 'dd',
+                item_id: 'de',
+         }
+        ]
+    },
+
+    {
+        restaurant_id: '222',
+        restaurantName: 'KFC',
+        apartmentNumber: 100,
+        streetname: 'Klien St',
+        zipcode: 47382,
+        phoneNumber: 3754320798,
+        imgUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/KFC_logo.svg/200px-KFC_logo.svg.png',
+        rating: 2.5,
+        tags: ['fried chicken'],
+        menu: [
+            { 
+            item_id: 'ea',
+            item_id: 'eb',
+            item_id: 'ec',
+            item_id: 'ed',
+            item_id: 'ee',
             }
         ]
     }
