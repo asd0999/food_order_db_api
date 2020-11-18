@@ -54,6 +54,38 @@ orders = [
         ],
         createdAt: 3
     },
+
+    {
+        user_id: 'sara123',
+        email: 'sara456@gmail.com',
+        phoneNumber: 1233214567,
+        delivery: true,
+        order: [
+            { 
+            item_id: 'aa', 
+            quantity: 1,
+            },
+            { 
+            item_id: 'ab', 
+            quantity: 3,
+            },
+        ],
+        createdAt: 3
+    },
+
+    {
+        user_id: 'sara123',
+        email: 'sara456@gmail.com',
+        phoneNumber: 1233214567,
+        delivery: true,
+        order: [
+            { 
+            item_id: 'ad', 
+            quantity: 1,
+            }
+        ],
+        createdAt: 3
+    }
 ]
 
 module.exports = orders
