@@ -5,9 +5,11 @@ const morgan = require("morgan");
 const app = express();
 const cors = require("cors");
 
+require('dotenv').config();
+
 // CONFIGURATIONS
-const PORT = 3030;
-const mongodbURI = "mongodb://localhost:27017/food_orders";
+const PORT = process.env.PORT;
+const mongodbURI = process.env.MONGODB_URI;
 mongoose.connection;
 
 // DATABASE
