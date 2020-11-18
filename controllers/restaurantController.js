@@ -18,7 +18,7 @@ restaurants.get("/", (req, res) => {
 
 // show
 restaurants.get("/:id", (req, res) => {
-    MenuItem.findById({ restaurant_id: req.params.id }, (error, foundItems) => {
+    Restaurant.find({ restaurant_id: req.params.id }, (error, foundItems) => {
         if (error) {
             res.status(400).json({ error: error.message });
         } else {
