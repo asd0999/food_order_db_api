@@ -50,6 +50,7 @@ orders.post("/:user_id/new", (req, res) => {
         if (error) {
             res.status(400).json({ error: error.message });
         } else {
+            // User.findByIdandUpdate({req.params.user_id}, push id in to array)
             res.status(200).json(createdOrder);
         }
     });
