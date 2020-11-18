@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const app = express();
 const cors = require("cors");
 
-require('dotenv').config();
+require("dotenv").config();
 
 // CONFIGURATIONS
 const PORT = process.env.PORT;
@@ -14,30 +14,38 @@ mongoose.connection;
 
 // DATABASE
 mongoose.connect(
-  mongodbURI,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  },
-  () => {
-    console.log("the connection with mongod is established at", mongodbURI);
-  }
+    mongodbURI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+    },
+    () => {
+        console.log("the connection with mongod is established at", mongodbURI);
+    }
 );
 
 // CORS
-const whitelist = [
-  "http://localhost:3000",
-  "https://food-hubbs.herokuapp.com/",
-];
+// const whitelist = [
+//     "*",
+//     "http://localhost:3030",
+//     "http://localhost:3000",
+//     "https://food-hubbs.herokuapp.com/",
+// ];
+// const corsOptions = {
+//     origin: function(origin, callback) {
+//         if (whitelist.includes(origin)) {
+//             callback(null, true);
+//         } else {
+//             callback(new Error("Not allowed by CORS"));
+//         }
+//     },
+// };
+
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+    origin: ["*", "http://localhost:3000"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
 };
 
 // MIDDLEWARE
@@ -53,12 +61,15 @@ app.use("/restaurants", restaurantController);
 const orderController = require("./controllers/orderController");
 app.use("/orders", orderController);
 
+const menuItemController = require("./controllers/menuItemController");
+app.use("/menuitems", menuItemController);
+
 // ROUTE
 app.get("/", (req, res) => {
-  res.send("index route working");
+    res.send("index route working");
 });
 
 // LISTENER
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}...`);
+    console.log(`Server listening on port ${PORT}...`);
 });

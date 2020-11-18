@@ -2,18 +2,22 @@ const express = require("express");
 const Restaurant = require("../models/restaurantModel");
 const MenuItem = require("../models/menuItemModel");
 const restaurants = express.Router();
-const newRestaurants = require("../dataFiles/restaurantData.js");
+
+// DATA
+const newRestaurants = require("../dataFiles/restaurantData");
 
 // ROUTES
 // read
 restaurants.get("/", (req, res) => {
-    Restaurant.find({}, (error, foundRestaurants) => {
-        if (error) {
-            res.status(400).json({ error: error.message });
-        } else {
-            res.status(200).json(foundRestaurants);
-        }
-    });
+    Restaurant.find({})
+        .populate("MenuItem")
+        .exec((error, foundRestaurants) => {
+            if (error) {
+                res.status(400).json({ error: error.message });
+            } else {
+                res.status(200).json(foundRestaurants);
+            }
+        });
 });
 
 // show
@@ -57,6 +61,40 @@ restaurants.get("/seed/seed", (req, res) => {
             console.log(err);
         }
         console.log("SEED: NEW RESTAURANTS CREATED!");
+        res.redirect("/restaurants");
+    });
+});
+
+// seed-newschema-restaurants
+restaurants.get("/seed2/seed2", (req, res) => {
+    // console.log(newRestaurants);
+    Restaurant.create(newRestaurants, (err, createdRestaurants) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("SEED: NEW RESTAURANTS CREATED!");
+
+            createdRestaurants.map((r) => {
+                console.log(r);
+                MenuItem.find({ restaurant_id: r.restaurant_id }, (err, foundItem) => {
+                    console.log(foundItem); //array
+                    foundItem.map((item) => {
+                        Restaurant.findByIdAndUpdate(
+                            r._id, {
+                                $push: { menu: item._id },
+                            },
+                            (err, success) => {
+                                if (err) {
+                                    console.log(err);
+                                } else {
+                                    console.log(success);
+                                }
+                            }
+                        );
+                    });
+                });
+            });
+        }
         res.redirect("/restaurants");
     });
 });
