@@ -10,8 +10,8 @@ const newRestaurants = require("../dataFiles/restaurantData");
 // read
 restaurants.get("/", (req, res) => {
     Restaurant.find({})
-        .populate("MenuItem")
-        .exec((error, foundRestaurants) => {
+        .populate("menu") //?
+        .exec(function(error, foundRestaurants) {
             if (error) {
                 res.status(400).json({ error: error.message });
             } else {
