@@ -21,6 +21,9 @@ orders.get("/", (req, res) => {
 orders.get("/:user_id/lastorder", (req, res) => {
     Order.find({ user_id: req.params.user_id }) //add user from session
         .sort({ createdOn: 1 })
+        .populate({
+            path: "order.item_id", //doesnt work yet
+        })
         .exec((error, foundOrders) => {
             if (error) {
                 res.status(400).json({ error: error.message });
