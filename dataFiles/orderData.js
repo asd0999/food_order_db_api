@@ -1,7 +1,5 @@
 orders = [{
         user_id: "jordan111",
-        email: "jordan.abu23@gmail.com",
-        phoneNumber: 6052169075,
         delivery: true,
         order: [{
             item_id: "aa",
@@ -12,8 +10,6 @@ orders = [{
 
     {
         user_id: "bob222",
-        email: "Bob123@gmail.com",
-        phoneNumber: 4567890123,
         delivery: true,
         order: [{
                 item_id: "bb",
@@ -29,8 +25,6 @@ orders = [{
 
     {
         user_id: "sara123",
-        email: "sara456@gmail.com",
-        phoneNumber: 1233214567,
         delivery: false,
         order: [{
                 item_id: "ce",
@@ -50,8 +44,6 @@ orders = [{
 
     {
         user_id: "sara123",
-        email: "sara456@gmail.com",
-        phoneNumber: 1233214567,
         delivery: true,
         order: [{
                 item_id: "aa",
@@ -67,8 +59,6 @@ orders = [{
 
     {
         user_id: "sara123",
-        email: "sara456@gmail.com",
-        phoneNumber: 1233214567,
         delivery: true,
         order: [{
             item_id: "ad",
