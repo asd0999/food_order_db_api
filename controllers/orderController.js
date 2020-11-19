@@ -6,9 +6,9 @@ const newOrders = require("../dataFiles/orderData.js");
 // ROUTES
 // read - all orders
 orders.get("/", (req, res) => {
-    Order.find({}) //add user from session
-        .sort({ createdOn: 1 })
-        .exec((error, foundOrders) => {
+    Order.find({})
+        .sort({ createdAt: 1 })
+        .exec(function(error, foundOrders) {
             if (error) {
                 res.status(400).json({ error: error.message });
             } else {
@@ -20,10 +20,7 @@ orders.get("/", (req, res) => {
 // read - last order for a user
 orders.get("/:user_id/lastorder", (req, res) => {
     Order.find({ user_id: req.params.user_id }) //add user from session
-        .sort({ createdOn: 1 })
-        .populate({
-            path: "order.item_id", //doesnt work yet
-        })
+        .sort({ createdAt: 1 })
         .exec((error, foundOrders) => {
             if (error) {
                 res.status(400).json({ error: error.message });
@@ -48,12 +45,12 @@ orders.get("/:user_id/history", (req, res) => {
 
 // create
 orders.post("/:user_id/new", (req, res) => {
-    req.body.user_id = req.params.user_id; //temporary to check different user's orders
+    req.body.user_id = req.params.user_id;
+    console.log(req.body);
     Order.create(req.body, (error, createdOrder) => {
         if (error) {
             res.status(400).json({ error: error.message });
         } else {
-            // User.findByIdandUpdate({req.params.user_id}, push id in to array)
             res.status(200).json(createdOrder);
         }
     });
@@ -84,12 +81,13 @@ orders.get("/:id", (req, res) => {
 // seed
 orders.get("/seed/seed", (req, res) => {
     console.log(newOrders);
-    Order.create(newOrders, (err, orders) => {
+    Order.create(newOrders, (err, foundOrders) => {
         if (err) {
             console.log(err);
+        } else {
+            console.log("SEED: NEW ORDERS CREATED!");
+            res.redirect("/orders");
         }
-        console.log("SEED: NEW ORDERS CREATED!");
-        res.redirect("/orders");
     });
 });
 
