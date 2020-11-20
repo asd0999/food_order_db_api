@@ -10,7 +10,7 @@ const newRestaurants = require("../dataFiles/restaurantData");
 // read
 restaurants.get("/", (req, res) => {
     Restaurant.find({})
-        .populate("menu") //?
+        .populate("menu")
         .exec(function(error, foundRestaurants) {
             if (error) {
                 res.status(400).json({ error: error.message });
@@ -22,7 +22,7 @@ restaurants.get("/", (req, res) => {
 
 // show
 restaurants.get("/:id", (req, res) => {
-    Restaurant.find({ restaurant_id: req.params.id }, (error, foundItems) => {
+    Restaurant.find({ _id: req.params.id }, (error, foundItems) => {
         if (error) {
             res.status(400).json({ error: error.message });
         } else {
@@ -54,19 +54,19 @@ restaurants.delete("/:id", (req, res) => {
 });
 
 // seed
-restaurants.get("/seed/seed", (req, res) => {
-    console.log(newRestaurants);
-    Restaurant.create(newRestaurants, (err, restaurants) => {
-        if (err) {
-            console.log(err);
-        }
-        console.log("SEED: NEW RESTAURANTS CREATED!");
-        res.redirect("/restaurants");
-    });
-});
+// restaurants.get("/seed/seed", (req, res) => {
+//     console.log(newRestaurants);
+//     Restaurant.create(newRestaurants, (err, restaurants) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         console.log("SEED: NEW RESTAURANTS CREATED!");
+//         res.redirect("/restaurants");
+//     });
+// });
 
 // seed-newschema-restaurants
-restaurants.get("/seed2/seed2", (req, res) => {
+restaurants.get("/seed/seed", (req, res) => {
     // console.log(newRestaurants);
     Restaurant.create(newRestaurants, (err, createdRestaurants) => {
         if (err) {
