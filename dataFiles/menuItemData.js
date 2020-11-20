@@ -20,6 +20,8 @@ menuItems = [{
         description: "Yummy garlic toast",
         imgURL: "https://d1ralsognjng37.cloudfront.net/dc17742c-1eb5-4afd-b888-08aaa4d62160.jpeg",
         price: 7.5,
+
+
     },
 
     {

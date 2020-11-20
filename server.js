@@ -64,6 +64,9 @@ app.use("/orders", orderController);
 const menuItemController = require("./controllers/menuItemController");
 app.use("/menuitems", menuItemController);
 
+const userController = require("./controllers/userController")
+app.use("/users", userController);
+
 // ROUTE
 app.get("/", (req, res) => {
     res.send("index route working");
