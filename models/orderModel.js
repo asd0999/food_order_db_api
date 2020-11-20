@@ -1,14 +1,11 @@
 const mongoose = require("mongoose");
-
 const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
     user_id: { type: String },
-    email: { type: String },
-    phoneNumber: { type: Number },
-    delivery: { type: Boolean },
+    delivery: { type: Boolean, default: true }
     order: [{
-        item_id: { type: String },
+        item_id: { type: Schema.Types.ObjectId, ref: "MenuItem" },
         quantity: { type: Number },
     }, ],
 }, {
