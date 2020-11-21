@@ -6,7 +6,7 @@ const orderSchema = new Schema({
     user_name: { type: String },
     delivery: { type: Boolean, default: true },
     itemsInOrder: [{
-        item_id: { Type: String },
+        item_id: { type: String },
         quantity: { type: Number, default: 1 },
     }, ],
 }, {
