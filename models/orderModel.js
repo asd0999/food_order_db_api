@@ -6,7 +6,7 @@ const orderSchema = new Schema({
     delivery: { type: Boolean, default: true },
     order: [{
         item_id: { Type: String },
-        quantity: { type: Number },
+        quantity: { type: Number, default: 1 },
     }, ],
 }, {
     timestamps: true,
