@@ -8,6 +8,8 @@ const orderSchema = new Schema({
     itemsInOrder: [{
         item_id: { type: String },
         quantity: { type: Number, default: 1 },
+        item_name: { type: String },
+        price: { type: Number },
     }, ],
 }, {
     timestamps: true,
