@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const orderSchema = new Schema({
     user_id: { type: String },
     delivery: { type: Boolean, default: true },
-    order: [{
+    itemsInOrder: [{
         item_id: { Type: String },
         quantity: { type: Number, default: 1 },
     }, ],
