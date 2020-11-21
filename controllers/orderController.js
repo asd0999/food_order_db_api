@@ -45,7 +45,7 @@ orders.get("/:user_id/history", (req, res) => {
 
 // create
 orders.post("/:user_id/new", (req, res) => {
-    req.body.user_id = req.params.user_id;
+    // req.body.user_id = req.params.user_id;
     console.log(req.body);
     Order.create(req.body, (error, createdOrder) => {
         if (error) {
