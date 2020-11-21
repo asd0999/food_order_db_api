@@ -51,7 +51,7 @@ menuItems = [{
     {
         restaurant_id: "123",
         name: "chicken nuggets",
-        description: "https://i.insider.com/5f74ca460ab50d00184ad5ac?width=1100&format=jpeg&auto=webp",
+        description: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6R6r1u25a7DU3fT76xQn3nwRiKexbBgLKw&usqp=CAU",
         price: 6.25,
     },
 
