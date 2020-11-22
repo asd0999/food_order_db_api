@@ -33,7 +33,7 @@ orders.get("/:user_id/lastorder", (req, res) => {
 // read - history
 orders.get("/:user_id/history", (req, res) => {
     Order.find({ user_id: req.params.user_id })
-        .sort({ createdAt: 1 })
+        .sort({ createdAt: -1 })
         .exec((error, foundOrders) => {
             if (error) {
                 res.status(400).json({ error: error.message });
