@@ -1,22 +1,22 @@
 users = [
     {
-    username: 'jordan',
+    username: 'Jordan',
     password: 'jordan',
-    email: "jordan.abu23@gmail.com",
+    email: "jordan@gmail.com",
     phoneNumber: 6052169075,
     },
 
     {
-    username: 'bob',
-    password: 'bob',
-    email: "Bob123@gmail.com",
+    username: 'Tushar',
+    password: 'tushar',
+    email: "tushar123@gmail.com",
     phoneNumber: 4567890123,
     },
 
     {
-    username: 'sara',
-    password: 'sara',
-    email: "sara456@gmail.com",
+    username: 'Zafer',
+    password: 'zafer',
+    email: "zafer456@gmail.com",
         phoneNumber: 1233214567,
     }
 ]
