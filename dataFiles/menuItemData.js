@@ -51,7 +51,8 @@ menuItems = [{
     {
         restaurant_id: "123",
         name: "Chicken Nuggets",
-        description: "https://www.mamaknowsglutenfree.com/wp-content/uploads/2017/04/gluten-free-homemade-chicken-nuggets-1a-500x500.jpg",
+        description: "Delicious Chicken",
+        imgURL: "https://image.freepik.com/free-photo/chicken-nuggets-with-sauce_1339-12894.jpg",
         price: 6.25,
     },
 
