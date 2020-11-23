@@ -112,7 +112,7 @@ menuItems = [{
     {
         restaurant_id: "777",
         name: "Murg Makhani",
-        description: "Salad made from ground bulgur, parsley, and tomato paste ",
+        description: "Traditional Indian Dish ",
         imgURL: "https://www.thespruceeats.com/thmb/MFzL6KJj3FshM6R52vHX6HAwoXY=/6015x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/authentic-butter-chicken-1957382-Hero-5b61b398c9e77c0050160f54.jpg",
         price: 25,
     },
