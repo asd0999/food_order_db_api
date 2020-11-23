@@ -5,6 +5,7 @@ const orderSchema = new Schema({
     user_id: { type: String },
     user_name: { type: String },
     delivery: { type: Boolean, default: true },
+    restaurant_name: { type: String },
     itemsInOrder: [{
         item_id: { type: String },
         quantity: { type: Number, default: 1 },
