@@ -3,7 +3,7 @@ Our application allows logged-in users to order food from select restaurants. Th
 
 On the home page, each restaurant name is displayed along with the restaurant's rating, delivery fee, approximate delivery time. After clicking into a restaurant, the user will find the restaurant's menu, address, phone number. By clicking on a specific menu item, that food item will be added to the user's cart on the right-side of the page. Items can be deleted from the cart by clicking on the "X". After the user is satisfied with their cart details, they can click the "Place Order!" button, and their order details will be saved. The user can also look at the Past Orders in "My Account" to see that this order was saved. 
 
-For updating a user's most recent order, they can click on the "My Account" button at the top. The most recent order, will be colored green with an "update" button. The update button takes the user back to their cart, so that they can remove and add new items. Once the user is pleased with their updated cart, they can click the "update" button or if the user desires to delete the cart entirely, then they can click the "delete" button. 
+For updating a user's most recent order, they can click on the "My Account" button at the top. The most recent order, will be colored green with an "update" button. The update button takes the user back to their cart, so that they can remove and add new items. Once the user is pleased with their updated cart, they can click the "update order" button or if the user desires to delete the cart entirely, then they can click the "cancel order" button. 
 
 ### Links to the application's backend and frontend: 
  Backend Heroku: https://zuber-eats-api.herokuapp.com/
@@ -12,6 +12,7 @@ For updating a user's most recent order, they can click on the "My Account" butt
 
 ### Technologies Used: 
 Backend: Node.js, Express.js, MongoDB, Mongoose
+
 Frontend: React, JSX, CSS
 ### Roadblocks
 
