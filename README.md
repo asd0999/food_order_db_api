@@ -10,15 +10,20 @@ For updating a user's most recent order, they can click on the "My Account" butt
 
  Frontend Heroku: https://food-hubbs.herokuapp.com/
 
+ Frontend Github Repository: https://github.com/asd0999/food_order_app
+ 
 ### Technologies Used: 
 Backend: Node.js, Express.js, MongoDB, Mongoose
 
-Frontend: React, JSX, CSS
+Frontend: React, React Router, CSS
 
-### Roadblocks
+### Challenges 
+
+The Github work flow was a challenging because this was our first group project. 
+
+Figure out the schemes for our database was challenging because it was difficult to visualize the different relationships and the flow of data at the beginning. 
 
 At the beginning of the project, we did not plan out the layout/structure of the project as well as we should have. For this reason, later in the project, we were creating a number of components that we did not expect to create. Additionally, the lack of planning created problems for us when we named different states in app.js. 
-
 
 ### If more time permitted
 At the moment, we have three users created in the database, and new users are unable to create an account. We would have liked to create user authentication. On the homepage, each user would be prompted to signup or login. 
