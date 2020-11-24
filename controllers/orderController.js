@@ -80,7 +80,8 @@ orders.get("/:id", (req, res) => {
 
 // edit order
 orders.put("/:id/edit", (req, res) => {
-  Order.find({ order_id: req.params.id }, (error, foundItems) => {
+  console.log(req.body);
+  Order.findByIdAndUpdate(req.params.id, req.body, (error, foundItems) => {
     if (error) {
       res.status(400).json({ error: error.message });
     } else {
