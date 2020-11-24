@@ -14,15 +14,17 @@ For updating a user's most recent order, they can click on the "My Account" butt
 Backend: Node.js, Express.js, MongoDB, Mongoose
 
 Frontend: React, JSX, CSS
+
 ### Roadblocks
+
+At the beginning of the project, we did not plan out the layout/structure of the project as well as we should have. For this reason, later in the project, we were creating a number of components that we did not expect to create. Additionally, the lack of planning created problems for us when we named different states in app.js. 
+
 
 ### If more time permitted
 At the moment, we have three users created in the database, and new users are unable to create an account. We would have liked to create user authentication. On the homepage, each user would be prompted to signup or login. 
 
 Additionally, we would have liked to incorporate a Google Maps API into this application. With this API, the application would request the user's location upon entering the application. By having the users location, we could have provided a list of restaurants based on the user's location. 
 
-
-### Conclusion
 
 
 
